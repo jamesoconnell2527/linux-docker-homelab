@@ -1,0 +1,12 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: host
+    volumes:
+      - /mnt/bluey/jellyfin/config:/config
+      - /mnt/bluey/jellyfin/cache:/cache
+      - /mnt/bluey/jellyfin/tv:/media/tv
+      - /mnt/bluey/jellyfin/movies:/media/movies
+      - /mnt/bluey/jellyfin/music:/media/music
+    restart: unless-stopped
